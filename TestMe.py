@@ -25,7 +25,6 @@ def Pathfind(matrix,initil_vec,final_vec,distance):
                         flag=True
                         if small>tmp:
                             small=tmp
-                    
         #this node is treversed
         matrix[initil_vec[0]][initil_vec[1]][0]=1
         return True,small

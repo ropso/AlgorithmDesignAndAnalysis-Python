@@ -30,7 +30,7 @@ print(grapg_dict)
 
 #bfs
 #dfs
-finding='d'
+finding='Z'
 start='a'
 stacklist=[start]
 Quelist=[start]
@@ -40,14 +40,16 @@ while(len(Quelist)!=0):
     if Quelist[0]==finding:
         print('wegot a path')
         break
-    elif Quelist[0]not in traversedset:
-        vertex=Quelist.pop(0)
+    elif Quelist[-1] not in traversedset:
+        vertex=Quelist.pop()
         if grapg_dict.get(vertex)!=None:
             for elem in grapg_dict[vertex]:
                 Quelist.append(elem)
         traversedset.add(vertex)
         print(vertex)
-        
+    else:
+        print("No PAth")
+        break
 
 
 
