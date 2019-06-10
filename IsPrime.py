@@ -31,6 +31,3 @@ if __name__=="__main__":
     #TestCase 4 no=1
     print("Is prime" if IsPrimeNo(1) else "Not a Prime")
 
-
-
-    

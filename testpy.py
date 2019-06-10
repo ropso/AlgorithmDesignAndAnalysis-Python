@@ -2,8 +2,7 @@ import copy
 
 string1="kuldeep"
 list1=list("kuldeep")
-list3=copy.copy(list1)
-
+list3=copy.(list1)
 list3.append("sdasdasd")
 print("the main list is ",list1)
 print("this is list three",list3)
