@@ -1,16 +1,20 @@
 class CreditCard:
     """Consumer Creadit Card"""
+    
     def __init__(self,customer,bank,account,limit):
         self._customer=customer
         self._bank=bank
         self._account=account
         self._limit=limit
         self._balance=0
+    
     def get_customer(self):
         '''output :Customer Name'''
         return self._customer
+    
     def set_name(self):
         ''' set or change: Name of customers'''
+
     def charge(self,charge_amount):
         if charge_amount+self._balance >  self._limit:
             return False
