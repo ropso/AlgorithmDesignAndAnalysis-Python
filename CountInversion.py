@@ -19,9 +19,14 @@ def countinversion(item_container,lower_index,upper_index):
     return left_inverion+right_inversion+split_inversion
 
 if __name__=="__main__":
-    items=[1,4,2,5,7,6,10]
+    item=[]
+    for i in range(1,100001):
+        item.append(int(input()))
+    print(item)
+    items=[1,4,2,5,7,6,10,8]
 
-    print(countinversion(items,0,len(items)-1))
+    print(len(item))
+    print(countinversion(item,0,len(item)-1))
 
 
 
