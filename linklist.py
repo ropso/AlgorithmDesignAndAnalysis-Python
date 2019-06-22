@@ -41,8 +41,6 @@ class LinkedList:
                     
             index=index._next
             
-                # remove t  his entry put the index=index._next
-
     def RemoveDuplicateCleaner(self):
         index=self._head
         previous=self._Node()
@@ -55,6 +53,19 @@ class LinkedList:
                 previous._next=index._next
                 index=previous
             index=index._next
+
+def KthFromLast(indexk,node):
+    if node==None:
+        return [0,node]
+    else:
+        tmp=KthFromLast(indexk,node._next)
+        if tmp[0]==indexk:
+            return tmp
+        elif tmp[0]+1==indexk:
+            return [indexk,node]
+        else:
+            return [tmp[0]+1,node]            # remove t  his entry put the index=index._next
+
 if __name__=="__main__":
     ls=LinkedList()
     
@@ -68,7 +79,10 @@ if __name__=="__main__":
     ls.insert(8)
     ls.insert(8)
     ls.printList()
+    print("the kth element from last k=3")
+    print(KthFromLast(3,ls._head)[1]._value)
     ls.RemoveDuplicateCleaner()
     print("%")
     ls.printList()
+    print(KthFromLast(3,ls._head)[1]._value)
     #ls.deleteElement(2)
