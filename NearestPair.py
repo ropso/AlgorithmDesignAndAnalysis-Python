@@ -6,7 +6,7 @@ def nearestPair(px,py):
         min_distance=[-1,[0,0]]
         for i in range(0,len(px)):
             for j in range(i+1,len(px)):
-                delta=math.sqrt(((px[i][1][0]-px[j][1][0])**2)+((px[i][1][1]-px[j][1][1])**2))
+                delta=math.sqrt(((px[i][1][0]-px[j][1][0])**2)+((px[i][1][1]-px[j][1][1])**2))# better i could ake a function to ind distance between to elements
                 if delta<min_distance[0]:
                     min_distance=[delta,[px[i],px[j]]]
         return min_distance
