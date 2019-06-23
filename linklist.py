@@ -22,7 +22,7 @@ class LinkedList:
     def printList(self):
         index=self._head
         while(index!=None and index._value!=None):
-            print(index._value)
+            print(index._value,end=" ")
             index=index._next
     # delete the middle elements
     def removeDuplicate(self):
@@ -53,6 +53,19 @@ class LinkedList:
                 previous._next=index._next
                 index=previous
             index=index._next
+def MiddleDelete(node,val):
+    while val>0:
+        node=node._next
+        val-=1
+    index=node
+    while(index._next._next!=None):
+        index._value=index._next._value
+        index=index._next
+    index._value=index._next._value
+    index._next=None
+
+
+
 
 def KthFromLast(indexk,node):
     if node==None:
@@ -78,6 +91,9 @@ if __name__=="__main__":
     ls.insert(78)
     ls.insert(8)
     ls.insert(8)
+    ls.printList()
+    print("the value after removing the 4 th elme")
+    MiddleDelete(ls._head,4)
     ls.printList()
     print("the kth element from last k=3")
     print(KthFromLast(3,ls._head)[1]._value)
