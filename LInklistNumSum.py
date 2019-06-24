@@ -14,6 +14,10 @@ def NumSumReverse(ar1,ar2):
         ar3.append(carray)
     return ar3
 
+def NumSumUpFront(ar1,ar2):
+    ar3=[]
+
+
 def addpadding(arr,num,before=False,after=False):
     if before and after:
         
