@@ -18,7 +18,15 @@ class LinkedList:
             while(index._next!=None):
                 index=index._next
             index._next=self._Node(value)
+    
+    def QueDelete(self):
+        temp=self._head._next
+        self._head=temp
+        return self._head._value
 
+
+
+    
     def printList(self):
         index=self._head
         while(index!=None and index._value!=None):
@@ -32,7 +40,7 @@ class LinkedList:
         while(index._next!=None):
             print("##",index._value)
             """index=index._next"""
-            if elem_dict.get(index_value)==None:
+            if elem_dict.get(index._value)==None:
                 elem_dict[index._next._value]=1
                 print(elem_dict)
             else:
@@ -102,3 +110,4 @@ if __name__=="__main__":
     ls.printList()
     print(KthFromLast(3,ls._head)[1]._value)
     #ls.deleteElement(2)
+    print(ls.printList(),"this is deleed",ls.QueDelete())

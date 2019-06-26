@@ -1,3 +1,4 @@
+import heapq
 class NTree:
     '''by default its implemntation of binary search tree'''
     
@@ -46,12 +47,22 @@ class NTree:
             print(node._value)# in inorder trevarsal would give us sorted ist
             self.InOrderTree(node._right)
 
+    def findReplacement(self,node):
+        pass
     def findMinInTree(self,node,counter=-1):
         counter+=1
         if node._left==None:
             return [node._value,counter]
         else:
             return self.findMinInTree(node._left,counter)
+    def finMaxElem(self,node):
+        if node==None:
+            return None
+        if node._right==None:
+            return node
+        elif node._right._right==None:
+            return  self.finMaxElem(node._right)
+        
 
     def findMaxElemInTree(self,node,counter=-1):
         pass
@@ -63,6 +74,15 @@ if __name__=="__main__":
     tree.insert(11)
     tree.insert(78)
     tree.insert(1)
+    tree.insert(342)
+    tree.insert(56)
+    tree.insert(12)
+    tree.insert(454)
+    tree.insert(590)
+    tree.insert(14)
     tree.InOrderTree(tree._root_node)
-
+ 
     print("the min value in the tree is ",tree.findMinInTree(tree._root_node))
+    heapq
+
+    print("the max value in left subtree is",tree.finMaxElem(tree._root_node._left))
