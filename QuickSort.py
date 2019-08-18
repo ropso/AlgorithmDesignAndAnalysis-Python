@@ -3,7 +3,7 @@ def partion(partlist,low,high):
     firsthigh=low
     piviot=high
     for i in range(low,high):
-        if partlist[i]<partlist[piviot]:
+        if      [i]<partlist[piviot]:
             partlist[i],partlist[firsthigh]=partlist[firsthigh],partlist[i]
             firsthigh=firsthigh+1
     partlist[piviot],partlist[firsthigh]=partlist[firsthigh],partlist[piviot]
